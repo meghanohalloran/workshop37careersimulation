@@ -1,9 +1,9 @@
 const client = require('./client.cjs');
-const createUser = async (userName,password) => {
+const createItem = async (itemName) => {
   try {
     await client.query(`
-      INSERT INTO users (name, password)
-      VALUES ('${userName}','${password}');
+      INSERT INTO item
+      VALUES ('${itemName}')
     `);
   } catch (err) {
     console.log(err);
@@ -11,5 +11,5 @@ const createUser = async (userName,password) => {
 };
 
 module.exports = {
-  createUser
+  createItem
 };

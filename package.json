@@ -1,5 +1,10 @@
 {
+  "scripts": {
+    "seed": "node ./db/seed.cjs"
+  },
   "dependencies": {
-    "dotenv": "^16.4.7"
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "pg": "^8.13.3"
   }
 }
