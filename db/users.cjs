@@ -1,4 +1,4 @@
-const client = require('./client.cjs');
+const client = require ('./client.cjs');
 const createUser = async (userName,password) => {
   try {
     await client.query(`

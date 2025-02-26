@@ -2,7 +2,7 @@ const client = require('./client.cjs');
 const createItem = async (itemName) => {
   try {
     await client.query(`
-      INSERT INTO item
+      INSERT INTO item (name)
       VALUES ('${itemName}')
     `);
   } catch (err) {
