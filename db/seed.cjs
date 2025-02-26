@@ -7,9 +7,9 @@ const dropTables = async() => {
 try {
 
 await client.query(`
-  DROP TABLE IF EXISTS users CASCADE;
-  DROP TABLE IF EXISTS item CASCADE;
   DROP TABLE IF EXISTS review;
+  DROP TABLE IF EXISTS item;
+  DROP TABLE IF EXISTS users;
   `);
   console.log('drop tables');
 
@@ -37,8 +37,8 @@ const createTables = async() => {
     CREATE TABLE review (
       id SERIAL PRIMARY KEY,
       date DATE NOT NULL,
-      item_id INTEGER REFERENCES item(id) ON DELETE CASCADE,
-      user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+      item_id INTEGER REFERENCES item(id),
+      user_id INTEGER REFERENCES users(id),
       description VARCHAR(500) NOT NULL
   );
     `);
