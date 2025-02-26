@@ -55,10 +55,10 @@ const syncAndSeed = async() => {
 
   await dropTables();
   await createTables();
-  await createUser('Bob', 'bob123');
-  await createUser('Ann', 'ann123');
-  await createUser('Tom', 'tom123');
-  await createUser('Mary', 'mary123');
+  await createUser('bob', 'bob123');
+  await createUser('ann', 'ann123');
+  await createUser('tom', 'tom123');
+  await createUser('mary', 'mary123');
   console.log('created users');
 
   await createItem('shirt');

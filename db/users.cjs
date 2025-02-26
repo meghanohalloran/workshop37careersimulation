@@ -13,6 +13,19 @@ const createUser = async (userName,password) => {
   }
 };
 
+const authenticateUser = async(username, password) => {
+  try {
+      const {rows} = await client.query(`
+        SELECT * FROM users 
+        WHERE username=${username} AND password=${password};
+        `);
+
+        console.log(rows);
+  }catch(err) {
+    console.log(err);
+
+  }
+};
 module.exports = {
   createUser
 };
